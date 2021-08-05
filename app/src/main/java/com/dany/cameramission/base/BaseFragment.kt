@@ -9,7 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 
-class BaseFragment<VDB : ViewDataBinding>(
+open class BaseFragment<VDB : ViewDataBinding>(
   @LayoutRes
   private val layoutResId: Int,
 ) : Fragment() {
