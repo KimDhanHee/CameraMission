@@ -28,7 +28,9 @@ buildscript {
         def camera_version = "1.0.0"
 
         // 3rd Libraries
-        def barcode_scanner_version = "16.1.2"
+        def glide_version = "4.12.0"
+        def tensor_version = "0.1.0"
+        def tensor_gpu_version = "2.3.0"
 
         kotlin_libraries = [
                 // Kotlin Standard Libraries
@@ -72,8 +74,17 @@ buildscript {
         ]
 
         third_libraries = [
-                // Barcode Scanner
-                "com.google.mlkit:barcode-scanning:$barcode_scanner_version"
+                // Glide
+                "com.github.bumptech.glide:glide:$glide_version",
+                // Tensor Flow
+                "org.tensorflow:tensorflow-lite-support:$tensor_version",
+                "org.tensorflow:tensorflow-lite-metadata:$tensor_version",
+                "org.tensorflow:tensorflow-lite-gpu:$tensor_gpu_version"
+        ]
+
+        annotations = [
+                // Glide
+                "com.github.bumptech.glide:compiler:$glide_version"
         ]
     }
     repositories {
