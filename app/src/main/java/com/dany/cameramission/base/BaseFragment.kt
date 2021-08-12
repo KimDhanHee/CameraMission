@@ -16,17 +16,17 @@ open class BaseFragment<VDB : ViewDataBinding>(
   override fun onCreateView(
     inflater: LayoutInflater,
     container: ViewGroup?,
-    savedInstanceState: Bundle?
+    savedInstanceState: Bundle?,
   ): View? = DataBindingUtil.inflate<VDB>(inflater, layoutResId, container, false).run {
     lifecycleOwner = this@BaseFragment
 
+    initView()
     bindingVM()
-    bindingViewData()
     setEventListener()
     root
   }
 
+  protected open fun VDB.initView() {}
   protected open fun VDB.bindingVM() {}
-  protected open fun VDB.bindingViewData() {}
   protected open fun VDB.setEventListener() {}
 }
