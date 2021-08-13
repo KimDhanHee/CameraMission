@@ -2,18 +2,25 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
   android:id="@+id/main"
-  app:startDestination="@id/photoGridFragment">
+  app:startDestination="@id/photoGrid">
   
   <fragment
-    android:id="@+id/photoGridFragment"
+    android:id="@+id/photoGrid"
     android:name="com.dany.cameramission.ui.dest.PhotoGridFragment"
-    android:label="PhotoGridFragment" >
+    android:label="PhotoGrid">
     <action
-      android:id="@+id/action_photoGridFragment_to_cameraFragment"
-      app:destination="@id/cameraFragment" />
+      android:id="@+id/actionToPhotoCapture"
+      app:destination="@id/photoCapture" />
+    <action
+      android:id="@+id/actionToPhotoMission"
+      app:destination="@id/photoMission" />
   </fragment>
   <fragment
-    android:id="@+id/cameraFragment"
-    android:name="com.dany.cameramission.ui.dest.CameraFragment"
-    android:label="CameraFragment" />
+    android:id="@+id/photoCapture"
+    android:name="com.dany.cameramission.ui.dest.PhotoCaptureFragment"
+    android:label="PhotoCapture" />
+  <fragment
+    android:id="@+id/photoMission"
+    android:name="com.dany.cameramission.ui.dest.PhotoMissionFragment"
+    android:label="PhotoMission" />
 </navigation>
